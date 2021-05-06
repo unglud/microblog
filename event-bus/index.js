@@ -12,7 +12,7 @@ app.post("/events", (req, res) => {
 
   post("http://localhost:4000/events", event);
   post("http://localhost:4001/events", event);
-  // post("http://localhost:4002/events", event);
+  post("http://localhost:4002/events", event);
 
   res.send({ status: "ok" });
 });
