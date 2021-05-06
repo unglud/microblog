@@ -10,9 +10,9 @@ app.use(cors());
 app.post("/events", (req, res) => {
   const event = req.body;
 
-  // post("http://localhost:4000", event);
-  // post("http://localhost:4001", event);
-  // post("http://localhost:4002", event);
+  post("http://localhost:4000/events", event);
+  post("http://localhost:4001/events", event);
+  // post("http://localhost:4002/events", event);
 
   res.send({ status: "ok" });
 });
