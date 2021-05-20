@@ -11,18 +11,18 @@ app.post("/events", (req, res) => {
   const event = req.body;
   events.push(event);
 
-  post("http://localhost:4000/events", event).catch((error) =>
+  post("http://posts-clusterip-srv:4000/events", event).catch((error) =>
     console.log(error.message)
   );
-  post("http://localhost:4001/events", event).catch((error) =>
-    console.log(error.message)
-  );
-  post("http://localhost:4002/events", event).catch((error) =>
-    console.log(error.message)
-  );
-  post("http://localhost:4003/events", event).catch((error) =>
-    console.log(error.message)
-  );
+  // post("http://localhost:4001/events", event).catch((error) =>
+  //   console.log(error.message)
+  // );
+  // post("http://localhost:4002/events", event).catch((error) =>
+  //   console.log(error.message)
+  // );
+  // post("http://localhost:4003/events", event).catch((error) =>
+  //   console.log(error.message)
+  // );
 
   res.send({ status: "ok" });
 });

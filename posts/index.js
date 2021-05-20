@@ -21,7 +21,7 @@ app.post("/posts", async (req, res) => {
     title,
   };
 
-  await post("http://localhost:4005/events", {
+  await post("http://event-bus-srv:4005/events", {
     type: "PostCreated",
     data: { id, title },
   });
@@ -30,12 +30,11 @@ app.post("/posts", async (req, res) => {
 });
 
 app.post("/events", (req, res) => {
-  console.log(`Recevied Event`, req.body.type);
+  console.log(`Received Event`, req.body.type);
 
   res.send({ status: "ok" });
 });
 
 app.listen(4000, () => {
-  console.log(`v55`);
   console.log(`listening on 4000`);
 });
