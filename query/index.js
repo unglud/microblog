@@ -14,6 +14,7 @@ app.get("/posts", (req, res) => {
 });
 
 function handleEvent(type, data) {
+  console.log(`Received Event`, type);
   if (type === "PostCreated") {
     const { id, title } = data;
 
