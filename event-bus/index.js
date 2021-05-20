@@ -14,15 +14,15 @@ app.post("/events", (req, res) => {
   post("http://posts-clusterip-srv:4000/events", event).catch((error) =>
     console.log(error.message)
   );
-  // post("http://localhost:4001/events", event).catch((error) =>
-  //   console.log(error.message)
-  // );
-  // post("http://localhost:4002/events", event).catch((error) =>
-  //   console.log(error.message)
-  // );
-  // post("http://localhost:4003/events", event).catch((error) =>
-  //   console.log(error.message)
-  // );
+  post("http://comments-srv:4001/events", event).catch((error) =>
+    console.log(error.message)
+  );
+  post("http://query-srv:4002/events", event).catch((error) =>
+    console.log(error.message)
+  );
+  post("http://moderation-srv:4003/events", event).catch((error) =>
+    console.log(error.message)
+  );
 
   res.send({ status: "ok" });
 });
